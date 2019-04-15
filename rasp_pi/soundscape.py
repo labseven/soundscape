@@ -44,7 +44,7 @@ while True:
 
     if not button1.value:
         if(not isPlaying[0]):
-            subprocess.call(['killall', 'omxplayer'])
+            subprocess.call(['killall', 'omxplayer.bin'])
             subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[0]])
             isPlaying[0] = True
             isPlaying[1] = False
@@ -53,7 +53,7 @@ while True:
 
     if not button2.value:
         if(not isPlaying[1]):
-            subprocess.call(['killall', 'omxplayer'])
+            subprocess.call(['killall', 'omxplayer.bin'])
             subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[1]])
             isPlaying[1] = True
             isPlaying[0] = False
