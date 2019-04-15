@@ -29,35 +29,34 @@ if not len(mp3_files) > 0:
 print('--- Available mp3 files ---')
 print(mp3_files)
 
-isPlaying = False
-btnList = [button1, button2]
+isPlaying = [False, False]
+# btnList = [button1, button2]
 
-def resetButtonValuesExcept(exceptButton):
-    for button in btnList:
-        if button != exceptButton:
-            button.value = True
-            print("resetting %s", button)
-    subprocess.call(['killall', 'omxplayer'])
-    print('--- Cleared all existing mp3s. ---')
-
-
-
+# def resetButtonValuesExcept(exceptButton):
+#     for button in btnList:
+#         if button != exceptButton:
+#             button.value = True
+#             print("resetting %s", button)
+#     subprocess.call(['killall', 'omxplayer'])
+#     print('--- Cleared all existing mp3s. ---')
 
 while True:
 
     if not button1.value:
-        # if(isPlaying):
-            # resetButtonValuesExcept(button1) 
-        subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[0]])
-        isPlaying = True
+        if(not isPlaying[0]):
+            subprocess.call(['killall', 'omxplayer'])
+            subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[0]])
+            isPlaying[0] = True
+            isPlaying[1] = False
         print('--- Playing ' + mp3_files[0] + ' ---')
         time.sleep(0.25)
 
     if not button2.value:
-        # if(isPlaying):
-            # resetButtonValuesExcept(button1)
-        subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[1]])
-        isPlaying = True
+        if(not isPlaying[1]):
+            subprocess.call(['killall', 'omxplayer'])
+            subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[1]])
+            isPlaying[1] = True
+            isPlaying[0] = False
         print('--- Playing ' + mp3_files[1] + ' ---')
         time.sleep(0.25)
 
