@@ -42,7 +42,7 @@ def resetButtonValuesExcept(exceptButton):
     print('--- Cleared all existing mp3s. ---')
 
 
-subprocess.Popen(['omxplayer', mp3_files[0]])
+subprocess.Popen(['omxplayer assets/', mp3_files[0]])
 
 # while True:
 
