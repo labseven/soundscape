@@ -37,29 +37,27 @@ def resetButtonValuesExcept(exceptButton):
     for button in btnList:
         if button != exceptButton:
             button.value = True
-
+            print("resetting %s", button)
+    subprocess.call(['killall', 'omxplayer'])
+    print('--- Cleared all existing mp3s. ---')
 
 while True:
 
     if not button1.value:
         if(isPlaying):
             resetButtonValuesExcept(button1) 
-        subprocess.call(['killall', 'omxplayer'])
-        print('--- Cleared all existing mp3s. ---')
         subprocess.Popen(['omxplayer', mp3_files[0]])
         isPlaying = True
-        print('--- Playing ' + mp3_files[index] + ' ---')
+        print('--- Playing ' + mp3_files[0] + ' ---')
         print('--- Press button #3 to clear playing mp3s. ---')
         time.sleep(0.25)
 
     if not button2.value:
         if(isPlaying):
             resetButtonValuesExcept(button1)
-        subprocess.call(['killall', 'omxplayer'])
-        print('--- Cleared all existing mp3s. ---')
         subprocess.Popen(['omxplayer', mp3_files[1]])
         isPlaying = True
-        print('--- Playing ' + mp3_files[index] + ' ---')
+        print('--- Playing ' + mp3_files[1] + ' ---')
         print('--- Press button #3 to clear playing mp3s. ---')
         time.sleep(0.25)
 
