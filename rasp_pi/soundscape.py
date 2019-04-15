@@ -20,7 +20,7 @@ button3 = digitalio.DigitalInOut(board.D25)
 button3.direction = digitalio.Direction.INPUT
 button3.pull = digitalio.Pull.UP
 
-mp3_files = [ f for f in listdir('./assets') if f[-4:] == '.mp3' ]
+mp3_files = [ f for f in listdir('../assets/') if f[-4:] == '.mp3' ]
 
 
 if not len(mp3_files) > 0:
