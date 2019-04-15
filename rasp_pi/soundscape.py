@@ -46,16 +46,16 @@ def resetButtonValuesExcept(exceptButton):
 while True:
 
     if not button1.value:
-        if(isPlaying):
-            resetButtonValuesExcept(button1) 
+        # if(isPlaying):
+            # resetButtonValuesExcept(button1) 
         subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[0]])
         isPlaying = True
         print('--- Playing ' + mp3_files[0] + ' ---')
         time.sleep(0.25)
 
     if not button2.value:
-        if(isPlaying):
-            resetButtonValuesExcept(button1)
+        # if(isPlaying):
+            # resetButtonValuesExcept(button1)
         subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[1]])
         isPlaying = True
         print('--- Playing ' + mp3_files[1] + ' ---')
