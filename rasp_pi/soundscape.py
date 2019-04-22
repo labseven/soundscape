@@ -20,7 +20,7 @@ button3 = digitalio.DigitalInOut(board.D25)
 button3.direction = digitalio.Direction.INPUT
 button3.pull = digitalio.Pull.UP
 
-button4 = digitalio.DigitalInOut(board.D26)
+button4 = digitalio.DigitalInOut(board.D27)
 button4.direction = digitalio.Direction.INPUT
 button4.pull = digitalio.Pull.UP
 
