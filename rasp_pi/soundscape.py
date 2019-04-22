@@ -46,9 +46,9 @@ def processPlugOut(buttonIndex):
 while True:
     if isPlaying == -1:
         for i, button in enumerate(buttons):
-            if (not button.value):
+            if button.value:
                 processPlugIn(i) 
-    elif buttons[isPlaying].value:
+    elif not buttons[isPlaying].value:
         processPlugOut(i)
       
     time.sleep(0.25)
