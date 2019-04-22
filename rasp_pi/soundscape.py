@@ -36,6 +36,7 @@ else:
 isPlaying = 0
 
 def processPlugIn(buttonIndex):
+    global isPlaying
     if(isPlaying is not buttonIndex):
         subprocess.call(['killall', 'omxplayer.bin'])
         subprocess.Popen(['omxplayer', '-o', 'local', '/home/pi/Documents/soundscape/assets/'+ mp3_files[buttonIndex-1]])
@@ -44,6 +45,7 @@ def processPlugIn(buttonIndex):
         time.sleep(0.25)
 
 def processPlugOut():
+    global isPlaying
     subprocess.call(['killall', 'omxplayer.bin'])
     isPlaying = 0
     time.sleep(0.25)
