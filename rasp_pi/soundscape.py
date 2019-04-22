@@ -50,7 +50,7 @@ def processPlugOut():
 
 while True:
     # if the user plugs-out
-    if button1.value or button2.value or button3.value or button4.value and isPlaying == 0:
+    if (button1.value or button2.value or button3.value or button4.value) and isPlaying == 0:
         processPlugOut()
     # if the user plugs-in
     if not button1.value:
