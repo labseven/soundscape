@@ -56,21 +56,21 @@ while True:
     print(isPlaying)
     if not button1.value and isPlaying == 1 and isPlaying is not 0:
         processPlugOut(1)
-    # if not button2.value and isPlaying == 2:
-    #     processPlugOut(2)
-    # if not button3.value and isPlaying == 3:
-    #     processPlugOut(3)
-    # if not button4.value and isPlaying == 4:
-    #     processPlugOut(4)
+    if not button2.value and isPlaying == 2 and isPlaying is not 0:
+        processPlugOut(2)
+    if not button3.value and isPlaying == 3 and isPlaying is not 0:
+        processPlugOut(3)
+    if not button4.value and isPlaying == 4 and isPlaying is not 0:
+        processPlugOut(4)
     # if the user plugs-in
     if (button1.value) and isPlaying is not 1:
         processPlugIn(1);
-    # if (button2.value) and isPlaying is not 2:
-    #     processPlugIn(2);
-    # if (button3.value) and isPlaying is not 3:
-    #     processPlugIn(3);
-    # if (button4.value) and isPlaying is not 4:
-    #     processPlugIn(4); 
+    if (button2.value) and isPlaying is not 2:
+        processPlugIn(2);
+    if (button3.value) and isPlaying is not 3:
+        processPlugIn(3);
+    if (button4.value) and isPlaying is not 4:
+        processPlugIn(4); 
 
     # if the user plugs-out       
     time.sleep(0.25)
