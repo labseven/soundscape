@@ -43,7 +43,7 @@ def processPlugIn(buttonIndex):
         print('--- Playing ' + mp3_files[buttonIndex-1] + ' ---')
         time.sleep(0.25)
 
-def processPlugOut(buttonIndex):
+def processPlugOut():
     subprocess.call(['killall', 'omxplayer.bin'])
     isPlaying = 0
     time.sleep(0.25)
