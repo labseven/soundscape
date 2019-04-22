@@ -38,7 +38,7 @@ isPlaying = 0
 def processPlugIn(buttonIndex):
     if(isPlaying is not buttonIndex):
             subprocess.call(['killall', 'omxplayer.bin'])
-            subprocess.Popen(['omxplayer', '-o', 'local', '../assets/'+ mp3_files[buttonIndex-1]])
+            subprocess.Popen(['omxplayer', '-o', 'local', '/home/pi/Documents/soundscape/assets/'+ mp3_files[buttonIndex-1]])
             isPlaying = buttonIndex
         print('--- Playing ' + mp3_files[buttonIndex-1] + ' ---')
         time.sleep(0.25)
@@ -48,7 +48,7 @@ def processPlugOut(buttonIndex):
     isPlaying = 0
     time.sleep(0.25)
     print('--- Stopping ' + mp3_files[buttonIndex-1] + ' ---')
-    
+
 while True:
     # if the user plugs-out
     if button1.value or button2.value or button3.value or button4.value and isPlaying == 0:
