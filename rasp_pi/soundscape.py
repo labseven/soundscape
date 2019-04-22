@@ -53,23 +53,23 @@ def processPlugOut(buttonIndex):
 
 while True:
     # if the user plugs-out
-    if (button1.value) and isPlaying == 1:
+    if button1.value and isPlaying == 1:
         processPlugOut(1)
-    # if button2.value and isPlaying == 2:
-    #     processPlugOut(2)
-    # if button3.value and isPlaying == 3:
-    #     processPlugOut(3)
-    # if button4.value and isPlaying == 4:
-    #     processPlugOut(4)
+    if button2.value and isPlaying == 2:
+        processPlugOut(2)
+    if button3.value and isPlaying == 3:
+        processPlugOut(3)
+    if button4.value and isPlaying == 4:
+        processPlugOut(4)
     # if the user plugs-in
     if (not button1.value) and isPlaying != 1:
         processPlugIn(1);
-    # if (not button2.value) and isPlaying != 2:
-    #     processPlugIn(2);
-    # if (not button3.value) and isPlaying != 3:
-    #     processPlugIn(3);
-    # if (not button4.value) and isPlaying != 4:
-    #     processPlugIn(4); 
+    if (not button2.value) and isPlaying != 2:
+        processPlugIn(2);
+    if (not button3.value) and isPlaying != 3:
+        processPlugIn(3);
+    if (not button4.value) and isPlaying != 4:
+        processPlugIn(4); 
 
     # if the user plugs-out       
     time.sleep(0.25)
