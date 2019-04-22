@@ -11,7 +11,7 @@ import digitalio
 button_pins = [board.D22, board.D23, board.D24, board.D27]
 buttons = []
 
-for pin in pins:
+for pin in button_pins:
     buttons.append(digitalio.DigitalInOut(pin))
     buttons[-1].direction = digitalio.Direction.INPUT
     buttons[-1].pull = digitalio.Pull.UP
@@ -48,7 +48,7 @@ while True:
         for i, button in enumerate(buttons):
             if (not button.value):
                 processPlugIn(i) 
-    else if buttons[isPlaying].value:
+    elif buttons[isPlaying].value:
         processPlugOut(i)
       
     time.sleep(0.25)
