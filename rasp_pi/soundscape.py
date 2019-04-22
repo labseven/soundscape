@@ -44,24 +44,31 @@ def processPlugIn(buttonIndex):
         print('--- Playing ' + mp3_files[buttonIndex-1] + ' ---')
         time.sleep(0.25)
 
-def processPlugOut():
+def processPlugOut(buttonIndex):
     global isPlaying
     subprocess.call(['killall', 'omxplayer.bin'])
+    print('--- Stopping ' + mp3_files[buttonIndex-1] + ' ---')
     isPlaying = 0
     time.sleep(0.25)
 
 while True:
     # if the user plugs-out
-    if (button1.value or button2.value or button3.value or button4.value) and isPlaying == 0:
-        processPlugOut()
+    if button1.value and isPlaying == 1:
+        processPlugOut(1)
+    if button2.value and isPlaying == 2:
+        processPlugOut(2)
+    if button3.value and isPlaying == 3:
+        processPlugOut(3)
+    if button4.value and isPlaying == 4:
+        processPlugOut(4)
     # if the user plugs-in
-    if not button1.value:
+    if not button1.value and isPlaying != 1:
         processPlugIn(1);
-    if not button2.value:
+    if not button2.value and isPlaying != 2:
         processPlugIn(2);
-    if not button3.value:
+    if not button3.value and isPlaying != 3:
         processPlugIn(3);
-    if not button4.value:
+    if not button4.value and isPlaying != 4:
         processPlugIn(4); 
 
     # if the user plugs-out       
