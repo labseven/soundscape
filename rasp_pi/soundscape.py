@@ -47,7 +47,6 @@ def processPlugOut():
     subprocess.call(['killall', 'omxplayer.bin'])
     isPlaying = 0
     time.sleep(0.25)
-    print('--- Stopping ' + mp3_files[buttonIndex-1] + ' ---')
 
 while True:
     # if the user plugs-out
