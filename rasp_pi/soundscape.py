@@ -49,6 +49,6 @@ while True:
             if button.value:
                 processPlugIn(i) 
     elif not buttons[isPlaying].value:
-        processPlugOut(i)
+        processPlugOut(isPlaying)
       
     time.sleep(0.25)
