@@ -53,7 +53,7 @@ def processPlugOut(buttonIndex):
 
 while True:
     # if the user plugs-out
-    if button1.value and isPlaying == 1:
+    if (not button1.value) and isPlaying == 1:
         processPlugOut(1)
     # if button2.value and isPlaying == 2:
     #     processPlugOut(2)
@@ -62,7 +62,7 @@ while True:
     # if button4.value and isPlaying == 4:
     #     processPlugOut(4)
     # if the user plugs-in
-    if (not button1.value) and isPlaying != 1:
+    if (button1.value) and isPlaying != 1:
         processPlugIn(1);
     # if (not button2.value) and isPlaying != 2:
     #     processPlugIn(2);
