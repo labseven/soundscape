@@ -28,7 +28,8 @@ else:
 dirname = os.path.dirname(__file__)
 # init mixer and load sounds
 
-pygame.mixer.init(48000, -16, 1, 1024)
+pygame.mixer.pre_init(44100, -16, 2, 2048)
+pygame.mixer.init()
 # pygame Sounds Object has limited mp3 support, using ogg files for everything
 print("Loading sounds file..")
 start = time.time()
