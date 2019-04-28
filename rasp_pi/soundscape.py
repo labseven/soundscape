@@ -33,14 +33,22 @@ pygame.mixer.init()
 print("Loading sounds file..")
 start = time.time()
 # ordered from right to left, from T-station to School
-sounds =[pygame.mixer.Sound('../assets/t_station.ogg'),
-        pygame.mixer.Sound('../assets/walking.ogg'),
-        pygame.mixer.Sound('../assets/park.ogg'),
-        pygame.mixer.Sound('../assets/bakery.ogg'),
-        pygame.mixer.Sound('../assets/barber_shop.ogg'),
-        pygame.mixer.Sound('../assets/birds.ogg'),
-        pygame.mixer.Sound('../assets/kids.ogg')
-        ]
+sounds = []
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/t_station.ogg'))
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/walking.ogg'))
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/park.ogg'))
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/bakery.ogg'))
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/barber_shop.ogg'))
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/birds.ogg'))
+print("Loading t_station..")
+sounds.append(pygame.mixer.Sound('../assets/kids.ogg'))
+
 end = time.time()
 print("Loading sounds complete, Elapsed Time :", end - start )
 
