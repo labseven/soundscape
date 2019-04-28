@@ -45,7 +45,7 @@ sounds.append(pygame.mixer.Sound('../assets/bakery.ogg'))
 print("Loading barber_shop..")
 sounds.append(pygame.mixer.Sound('../assets/barber_shop.ogg'))
 print("Loading birds..")
-sounds.append(pygame.mixer.Sound('../assets/birds.ogg'))
+# sounds.append(pygame.mixer.Sound('../assets/birds.ogg'))
 print("Loading kids..")
 sounds.append(pygame.mixer.Sound('../assets/kids.ogg'))
 
