@@ -33,7 +33,7 @@ pygame.mixer.init()
 print("Loading sounds file..")
 start = time.time()
 # ordered from right to left, from T-station to School
-sounds =[pygame.mixer.Sound(os.path.join(dirname, '../assets/barber_shop.ogg')),
+sounds =[pygame.mixer.Sound('../assets/t_station.ogg'),
         pygame.mixer.Sound('../assets/walking.ogg'),
         pygame.mixer.Sound('../assets/park.ogg'),
         pygame.mixer.Sound('../assets/bakery.ogg'),
