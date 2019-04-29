@@ -25,6 +25,7 @@ else:
     print('--- Available wav files ---')
     print(wav_files)
 
+wav_files = ["t_station", "walking", "park", "bakery", "barber_shop", "barber_shop", "barber_shop"]
 dirname = os.path.dirname(__file__)
 # init mixer and load sounds
 
@@ -74,6 +75,7 @@ def processPlugIn(buttonIndex):
     global isPlaying
     pygame.mixer.stop()
     pygame.mixer.Channel(buttonIndex).play(sounds[buttonIndex])
+    sounds[buttonIndex].set_volume(0.9)
     isPlaying = buttonIndex
     print('--- Playing ' + wav_files[buttonIndex] + ' ---')
     time.sleep(0.25)
