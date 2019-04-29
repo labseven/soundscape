@@ -22,7 +22,7 @@ wav_files = [ f for f in listdir('../assets/') if f[-4:] == '.wav' ]
 if not len(wav_files) > 0:
     print("No wav files found!")
 else:
-    print('--- Available ogg files ---')
+    print('--- Available wav files ---')
     print(wav_files)
 
 dirname = os.path.dirname(__file__)
@@ -30,6 +30,7 @@ dirname = os.path.dirname(__file__)
 
 pygame.mixer.pre_init(44100, -16, 2, 2048)
 pygame.mixer.init()
+
 # pygame Sounds Object has limited mp3 support, using wav files for everything
 print("Loading sounds file..")
 start = time.time()
@@ -37,15 +38,25 @@ start = time.time()
 sounds = []
 
 print("Loading t_station..")
-sounds.append(pygame.mixer.Sound('../assets/t_station.wav'))
+t_station = pygame.mixer.Sound('../assets/t_station.wav')
+sounds.append(t_station)
 print("Loading walking..")
-sounds.append(pygame.mixer.Sound('../assets/walking.wav'))
+walking = pygame.mixer.Sound('../assets/walking.wav')
+sounds.append(walking)
 print("Loading park..")
-sounds.append(pygame.mixer.Sound('../assets/park.wav'))
+park = pygame.mixer.Sound('../assets/park.wav')
+sounds.append(park)
 print("Loading bakery..")
-sounds.append(pygame.mixer.Sound('../assets/bakery.wav'))
+bakery = pygame.mixer.Sound('../assets/bakery.wav')
+sounds.append(bakery)
 print("Loading barber_shop..")
-sounds.append(pygame.mixer.Sound('../assets/barber_shop.wav'))
+barber_shop = pygame.mixer.Sound('../assets/barber_shop.wav')
+sounds.append(barber_shop)
+
+# dummy
+sounds.append(barber_shop)
+sounds.append(barber_shop)
+
 
 # not enough memory on rasp_pi
 # print("Loading birds..")
@@ -56,10 +67,6 @@ sounds.append(pygame.mixer.Sound('../assets/barber_shop.wav'))
 
 end = time.time()
 print("Loading sounds complete, Elapsed Time :", end - start )
-
-
-# pygame.mixer.Channel(0).play(sounds[0])
-
 
 isPlaying = -1
 
