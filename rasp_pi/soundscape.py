@@ -72,6 +72,7 @@ isPlaying = -1
 
 def processPlugIn(buttonIndex):
     global isPlaying
+    pygame.mixer.stop()
     pygame.mixer.Channel(buttonIndex).play(sounds[buttonIndex])
     isPlaying = buttonIndex
     print('--- Playing ' + wav_files[buttonIndex] + ' ---')
