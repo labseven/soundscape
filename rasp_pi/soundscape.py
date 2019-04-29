@@ -35,6 +35,8 @@ print("Loading sounds file..")
 start = time.time()
 # ordered from right to left, from T-station to School
 sounds = []
+print("Loading barber_shop..")
+sounds.append(pygame.mixer.Sound('../assets/barber_shop.wav'))
 print("Loading birds..")
 sounds.append(pygame.mixer.Sound('../assets/birds.wav'))
 print("Loading kids..")
@@ -47,8 +49,7 @@ print("Loading park..")
 sounds.append(pygame.mixer.Sound('../assets/park.wav'))
 print("Loading bakery..")
 sounds.append(pygame.mixer.Sound('../assets/bakery.wav'))
-print("Loading barber_shop..")
-sounds.append(pygame.mixer.Sound('../assets/barber_shop.wav'))
+
 
 end = time.time()
 print("Loading sounds complete, Elapsed Time :", end - start )
