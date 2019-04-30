@@ -25,7 +25,7 @@ else:
     print('--- Available wav files ---')
     print(wav_files)
 
-wav_files = ["t_station", "walking", "park", "bakery", "barber_shop", "barber_shop", "barber_shop"]
+wav_files = ["t_station", "walking", "park", "bakery", "barber_shop", "birds", "kids"]
 dirname = os.path.dirname(__file__)
 # init mixer and load sounds
 
@@ -54,16 +54,15 @@ print("Loading barber_shop..")
 barber_shop = pygame.mixer.Sound('../assets/barber_shop.wav')
 sounds.append(barber_shop)
 
-# dummy
-sounds.append(barber_shop)
-sounds.append(barber_shop)
-
+# # dummy
+# sounds.append(barber_shop)
+# sounds.append(barber_shop)
 
 # not enough memory on rasp_pi
-# print("Loading birds..")
-# sounds.append(pygame.mixer.Sound('../assets/birds.wav'))
-# print("Loading kids..")
-# sounds.append(pygame.mixer.Sound('../assets/kids.wav'))
+print("Loading birds..")
+sounds.append(pygame.mixer.Sound('../assets/birds.wav'))
+print("Loading kids..")
+sounds.append(pygame.mixer.Sound('../assets/kids.wav'))
 
 
 end = time.time()
