@@ -9,7 +9,7 @@ import board
 import digitalio
 import pygame
 
-button_pins = [board.D2, board.D3, board.D4, board.D17, board.D23, board.D24]
+button_pins = [board.D4, board.D17, board.D18, board.D27, board.D22, board.D23, board.D24]
 buttons = []
 
 for pin in button_pins:
