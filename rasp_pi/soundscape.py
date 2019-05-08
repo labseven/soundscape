@@ -9,7 +9,7 @@ import board
 import digitalio
 import pygame
 
-button_pins = [board.D4, board.D17, board.D18, board.D27, board.D22, board.D23, board.D24]
+button_pins = [board.D17, board.D18, board.D27, board.D22, board.D23, board.D24]
 buttons = []
 
 for pin in button_pins:
@@ -25,7 +25,7 @@ else:
     print('--- Available wav files ---')
     print(wav_files)
 
-wav_files = ["t_station", "walking", "park", "bakery", "barber_shop", "birds", "kids"]
+wav_files = ["intro", "t_station", "bakery", "barber_shop", "birds", "kids"]
 dirname = os.path.dirname(__file__)
 # init mixer and load sounds
 
@@ -37,26 +37,21 @@ print("Loading sounds file..")
 start = time.time()
 # ordered from right to left, from T-station to School
 sounds = []
+print("Loading intro")
+intro = pygame.mixer.Sound('../assets/intro.wav')
+sounds.append(intro)
 
 print("Loading t_station..")
 t_station = pygame.mixer.Sound('../assets/t_station.wav')
 sounds.append(t_station)
-print("Loading walking..")
-walking = pygame.mixer.Sound('../assets/walking.wav')
-sounds.append(walking)
-print("Loading park..")
-park = pygame.mixer.Sound('../assets/park.wav')
-sounds.append(park)
+
 print("Loading bakery..")
 bakery = pygame.mixer.Sound('../assets/bakery.wav')
 sounds.append(bakery)
+
 print("Loading barber_shop..")
 barber_shop = pygame.mixer.Sound('../assets/barber_shop.wav')
 sounds.append(barber_shop)
-
-# # dummy
-# sounds.append(barber_shop)
-# sounds.append(barber_shop)
 
 # not enough memory on rasp_pi
 print("Loading birds..")
